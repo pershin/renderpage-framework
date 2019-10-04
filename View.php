@@ -36,7 +36,7 @@
 
 namespace vendor\pershin\renderpage;
 
-use renderpage\libs\exceptions\ViewException;
+use vendor\pershin\renderpage\exceptions\ViewException;
 
 /**
  * Template engine
