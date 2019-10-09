@@ -122,7 +122,7 @@ class View {
      *
      * @param string $src The JavaScript file.
      *
-     * @return \renderpage\libs\View
+     * @return \vendor\pershin\renderpage\View
      */
     public function addScript(string $src) {
         $this->scripts[] = ['src' => $src];
@@ -134,7 +134,7 @@ class View {
      *
      * @param string $href The CSS file.
      *
-     * @return \renderpage\libs\View
+     * @return \vendor\pershin\renderpage\View
      */
     public function addStyle(string $href) {
         $this->styles[] = ['href' => $href];
@@ -148,7 +148,7 @@ class View {
      * @param mixed $value The value being assigned.
      * @param string $scope The scope of the assigned variable: 'layout' or 'template'
      *
-     * @return \renderpage\libs\View
+     * @return \vendor\pershin\renderpage\View
      *
      * @throws ViewException
      */

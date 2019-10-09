@@ -44,28 +44,28 @@ abstract class Controller {
     /**
      * Instance of Language class
      *
-     * @var \renderpage\libs\Language
+     * @var \vendor\pershin\renderpage\Language
      */
     public $language;
 
     /**
      * Instance of Request class
      *
-     * @var \renderpage\libs\Request
+     * @var \vendor\pershin\renderpage\Request
      */
     public $request;
 
     /**
      * Instance of Response class
      *
-     * @var \renderpage\libs\Response
+     * @var \vendor\pershin\renderpage\Response
      */
     public $response;
 
     /**
      * Instance of View class
      *
-     * @var \renderpage\libs\View
+     * @var \vendor\pershin\renderpage\View
      */
     public $view;
 

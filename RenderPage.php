@@ -56,21 +56,21 @@ class RenderPage {
     /**
      * Instance of Language class
      *
-     * @var \renderpage\libs\Language
+     * @var \vendor\pershin\renderpage\Language
      */
     public $language;
 
     /**
      * Instance of Request class
      *
-     * @var \renderpage\libs\Request
+     * @var \vendor\pershin\renderpage\Request
      */
     public $request;
 
     /**
      * Instance of Response class
      *
-     * @var \renderpage\libs\Response
+     * @var \vendor\pershin\renderpage\Response
      */
     public $response;
 
@@ -84,7 +84,7 @@ class RenderPage {
     /**
      * Route instance
      *
-     * @var \renderpage\libs\Route
+     * @var \vendor\pershin\renderpage\Route
      */
     private $route;
 
@@ -105,7 +105,7 @@ class RenderPage {
     /**
      * Application execute
      *
-     * @return \renderpage\libs\RenderPage
+     * @return \vendor\pershin\renderpage\RenderPage
      */
     public function execute(): RenderPage {
         if (!empty($this->controller)) {
@@ -125,7 +125,7 @@ class RenderPage {
     /**
      * Routing
      *
-     * @return \renderpage\libs\RenderPage
+     * @return \vendor\pershin\renderpage\RenderPage
      */
     public function route(): RenderPage {
         $this->route = new Route;

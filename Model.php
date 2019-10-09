@@ -44,14 +44,14 @@ abstract class Model {
     /**
      * Instance of Language class
      *
-     * @var \renderpage\libs\Language
+     * @var \vendor\pershin\renderpage\Language
      */
     public $language;
 
     /**
      * Instance of DB class
      *
-     * @var \renderpage\libs\DB
+     * @var \vendor\pershin\renderpage\DB
      */
     public $db;
 
