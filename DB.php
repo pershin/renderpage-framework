@@ -58,7 +58,7 @@ class DB {
     /**
      * Instance of PDO class
      *
-     * @var object
+     * @var \PDO
      */
     private $dbh;
 
@@ -87,6 +87,19 @@ class DB {
     public function getArray(string $sql, array $inputParameters = []) {
         $sth = $this->query($sql, $inputParameters);
         return $sth->fetchAll();
+    }
+
+    /**
+     * Get assoc
+     *
+     * @param string $sql
+     * @param array $inputParameters
+     *
+     * @return array
+     */
+    public function getAssoc(string $sql, array $inputParameters = []) {
+        $sth = $this->query($sql, $inputParameters);
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -137,7 +150,7 @@ class DB {
      * @param string $sql
      * @param array $inputParameters
      *
-     * @return object returning a result set as a PDOStatement object
+     * @return \PDOStatement Returning a result set as a PDOStatement object
      */
     public function query(string $sql, array $inputParameters = []) {
         if (!$this->isConnected) {
@@ -164,13 +177,10 @@ class DB {
      * Connect to DB
      */
     private function connect() {
-        try {
-            $conf = include APP_DIR . '/conf/db.php';
-            $this->dbh = new PDO($conf['dsn'], $conf['username'], $conf['password'], [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES {$conf['charset']}"]);
-            $this->isConnected = true;
-        } catch (RenderPageException $e) {
-            echo 'Unable to connect: ' . $e->getMessage();
-        }
+        $conf = include APP_DIR . '/conf/db.php';
+        $this->dbh = new PDO($conf['dsn'], $conf['username'], $conf['password'], [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES {$conf['charset']}"]);
+        $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->isConnected = true;
     }
 
 }
